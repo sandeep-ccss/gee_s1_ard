@@ -219,7 +219,7 @@ def s1_preproc(params):
             description = name           
             assetId = ASSET_ID+'/'+name
 
-            task = ee.batch.Export.image.toDrive(image=img,
+            task = ee.batch.Export.image.toAsset(image=img,
                                                  assetId=assetId,
                                                  description=description,
                                                  region=s1_1.geometry(),
