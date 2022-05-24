@@ -161,8 +161,8 @@ def slope_correction(collection, TERRAIN_FLATTENING_MODEL
         bandNames = image.bandNames()
         
         geom = image.geometry()
-        proj = ee.Projection('EPSG:4326')
-        #proj = image.select(1).projection()
+        #proj = ee.Projection('EPSG:4326')
+        proj = image.select(1).projection()
 
         elevation = DEM.resample('bilinear').reproject(proj,None, 10).clip(geom)
 
